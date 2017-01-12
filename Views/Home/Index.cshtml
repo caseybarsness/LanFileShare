@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+<br /><br />
+<p> Your Current IP: @ViewBag.PublicIp<br />
+@if(!Context.User.Identity.IsAuthenticated) {
+                        <span>You must register/login to share a file.</span>
+                    }
+</p>
+<h1>Avalible Files</h1>
+@ViewBag.AvalibleFiles.Count
+<p>
+    <table id="memberlist">
+       <tbody>
+        @foreach(var item in ViewBag.AvalibleFiles)
+         {
+          <tr>
+             <td><a href="/uploads/@item.FileName" target="_blank">@item.FileName</a></td>
+          </tr>
+         }
+       </tbody>
+       </table>
+</p>
+
+

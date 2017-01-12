@@ -1,0 +1,11 @@
+@{
+    ViewData["Title"] = "Upload";
+}
+<br />
+<br />
+Select a File to share:
+<br />
+<form method="post" asp-action="Index" asp-controller="Upload" enctype="multipart/form-data">
+    <input type="file" name="files" multiple/>
+    <input type="submit" value="Upload" />
+</form>
